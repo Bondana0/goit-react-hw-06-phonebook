@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { removeContact } from 'redux/slises/contactSlise';
+import { removeContact } from 'reedux/slises/contactSlise';
 
 import { StiledItem } from './ContactItem.styled';
 
