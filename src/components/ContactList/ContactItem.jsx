@@ -1,14 +1,14 @@
 import React from 'react';
-import { StiledItem } from './ContactItem.styled';
-
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'Redux/slises/contactSlise';
+import { removeContact } from 'redux/slises/contactSlise';
+
+import { StiledItem } from './ContactItem.styled';
 
 export function ContactItem({ id, name, number }) {
   const dispatch = useDispatch();
 
-  const onDelete = id => {
-    dispatch(deleteContact(id));
+  const handleDelete = id => {
+    dispatch(removeContact(id));
   };
   return (
     <>
@@ -20,7 +20,7 @@ export function ContactItem({ id, name, number }) {
         <button
           type="button"
           onClick={() => {
-            onDelete(id);
+            handleDelete(id);
           }}
         >
           Delete

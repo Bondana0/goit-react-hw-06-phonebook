@@ -6,13 +6,13 @@ export const ContactList = () => {
   const contacts = useSelector(state => state.contacts);
   const filter = useSelector(state => state.filter);
 
-  const contactsFilter = contacts.filter(contact =>
+  const changedList = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
 
   return (
     <ul>
-      {contactsFilter.map(item => {
+      {changedList.map(item => {
         const { id, name, number } = item;
         return <ContactItem key={id} id={id} name={name} number={number} />;
       })}

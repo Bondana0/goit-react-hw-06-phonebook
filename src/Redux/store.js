@@ -13,7 +13,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 
-const persistProportion = {
+const persistConfig = {
   key: 'contacts',
   storage,
   whitelist: ['contacts'],
@@ -24,7 +24,7 @@ const reducer = combineReducers({
   filter: filterSlise.reducer,
 });
 
-const persistedReducer = persistReducer(persistProportion, reducer);
+const persistedReducer = persistReducer(persistConfig, reducer);
 
 export const store = configureStore({
   reducer: persistedReducer,

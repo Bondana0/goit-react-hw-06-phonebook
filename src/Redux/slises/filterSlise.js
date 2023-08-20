@@ -10,4 +10,4 @@ export const filterSlise = createSlice({
   },
 });
 
-export const { filterContacts } = filterSlise.actions;
+export const { filteredContacts } = filterSlise.actions;

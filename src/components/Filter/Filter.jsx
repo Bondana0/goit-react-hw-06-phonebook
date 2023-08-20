@@ -1,13 +1,14 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { filterContacts } from 'Redux/slises/filterSlise';
+import { filteredContacts } from 'redux/slises/filterSlise';
 
 export const Filter = ({ value }) => {
   const dispatch = useDispatch();
-  const onFilterInput = event => {
+
+  const handleChangeFilter = event => {
     if (event.target.name === 'filter') {
       const filterInputValue = event.target.value;
-      dispatch(filterContacts(filterInputValue));
+      dispatch(filteredContacts(filterInputValue));
     }
   };
 
@@ -17,7 +18,7 @@ export const Filter = ({ value }) => {
       name="filter"
       required
       value={value}
-      onChange={onFilterInput}
+      onChange={handleChangeFilter}
     />
   );
 };
